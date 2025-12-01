@@ -26,7 +26,9 @@ module OpenAI
         #   @option state [Integer] :branched
         #
         # @return [Object]
-        def coerce(value, state:) = (raise NotImplementedError)
+        def coerce(value, state:)
+          raise NotImplementedError
+        end
 
         # @api private
         #
