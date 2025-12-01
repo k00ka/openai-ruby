@@ -13,7 +13,9 @@ module OpenAI
 
         class << self
           # @return [Hash{Symbol=>Object}]
-          def to_json_schema = OpenAI::Helpers::StructuredOutput::JsonSchemaConverter.to_json_schema(self)
+          def to_json_schema
+            OpenAI::Helpers::StructuredOutput::JsonSchemaConverter.to_json_schema(self)
+          end
 
           # @api private
           #
