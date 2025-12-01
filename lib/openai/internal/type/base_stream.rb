@@ -22,12 +22,16 @@ module OpenAI
         # @api public
         #
         # @return [void]
-        def close = OpenAI::Internal::Util.close_fused!(@iterator)
+        def close
+          OpenAI::Internal::Util.close_fused!(@iterator)
+        end
 
         # @api private
         #
         # @return [Enumerable<generic<Elem>>]
-        private def iterator = (raise NotImplementedError)
+        private def iterator
+          raise NotImplementedError
+        end
 
         # @api public
         #
@@ -45,7 +49,9 @@ module OpenAI
         # @api public
         #
         # @return [Enumerator<generic<Elem>>]
-        def to_enum = @iterator
+        def to_enum
+          @iterator
+        end
 
         alias_method :enum_for, :to_enum
 
