@@ -56,7 +56,9 @@ module OpenAI
 
         private_class_method :new
 
-        def self.[](...) = new(...)
+        def self.[](...)
+          new(...)
+        end
 
         # @param variants [Array<generic<Member>>]
         def initialize(*variants)
