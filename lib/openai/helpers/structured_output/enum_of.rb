@@ -58,7 +58,9 @@ module OpenAI
         attr_reader :values
 
         # @param values [Array<generic<Value>>]
-        def initialize(*values) = (@values = values.map { _1.is_a?(String) ? _1.to_sym : _1 })
+        def initialize(*values)
+          @values = values.map { _1.is_a?(String) ? _1.to_sym : _1 }
+        end
       end
     end
   end
