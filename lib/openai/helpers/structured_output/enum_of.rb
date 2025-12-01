@@ -50,7 +50,9 @@ module OpenAI
 
         private_class_method :new
 
-        def self.[](...) = new(...)
+        def self.[](...)
+          new(...)
+        end
 
         # @return [Array<generic<Value>>]
         attr_reader :values
