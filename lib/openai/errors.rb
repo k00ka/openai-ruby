@@ -13,7 +13,9 @@ module OpenAI
 
     class ConversionError < OpenAI::Errors::Error
       # @return [StandardError, nil]
-      def cause = @cause.nil? ? super : @cause
+      def cause
+        @cause.nil? ? super : @cause
+      end
 
       # @api private
       #
