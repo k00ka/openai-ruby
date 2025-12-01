@@ -20,7 +20,9 @@ module OpenAI
         #   @option state [Array<String>] :path
         #
         # @return [Hash{Symbol=>Object}]
-        def self.to_json_schema_inner(state:) = {type: "boolean"}
+        def self.to_json_schema_inner(state:)
+          {type: "boolean"}
+        end
 
         # rubocop:enable Lint/UnusedMethodArgument
       end
