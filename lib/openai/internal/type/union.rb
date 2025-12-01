@@ -34,7 +34,9 @@ module OpenAI
         # All of the specified variant info for this union.
         #
         # @return [Array<Array(Symbol, Proc, Hash{Symbol=>Object})>]
-        private def known_variants = (@known_variants ||= [])
+        private def known_variants
+          @known_variants ||= []
+        end
 
         # @api private
         #
@@ -46,7 +48,9 @@ module OpenAI
         # All of the specified variants for this union.
         #
         # @return [Array<Object>]
-        def variants = derefed_variants.map { _2 }
+        def variants
+          derefed_variants.map { _2 }
+        end
 
         # @api private
         #
@@ -134,7 +138,9 @@ module OpenAI
         # @api public
         #
         # @return [Integer]
-        def hash = variants.hash
+        def hash
+          variants.hash
+        end
 
         # @api private
         #
