@@ -31,7 +31,9 @@ module OpenAI
         #   @option spec [Boolean] :"nil?"
         #
         # @return [self]
-        def self.[](...) = new(...)
+        def self.[](...)
+          new(...)
+        end
 
         # @api public
         #
@@ -69,7 +71,9 @@ module OpenAI
         # @api public
         #
         # @return [Integer]
-        def hash = [self.class, item_type].hash
+        def hash
+          [self.class, item_type].hash
+        end
 
         # @api private
         #
@@ -146,12 +150,16 @@ module OpenAI
         # @api private
         #
         # @return [generic<Elem>]
-        protected def item_type = @item_type_fn.call
+        protected def item_type
+          @item_type_fn.call
+        end
 
         # @api private
         #
         # @return [Boolean]
-        protected def nilable? = @nilable
+        protected def nilable?
+          @nilable
+        end
 
         # @api private
         #
