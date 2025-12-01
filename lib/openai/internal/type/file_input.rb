@@ -36,7 +36,9 @@ module OpenAI
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= OpenAI::Internal::Type::FileInput
+        def self.==(other)
+          other.is_a?(Class) && other <= OpenAI::Internal::Type::FileInput
+        end
 
         class << self
           # @api private
