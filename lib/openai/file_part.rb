@@ -30,12 +30,16 @@ module OpenAI
     # @param a [Object]
     #
     # @return [String]
-    def to_json(*a) = read.to_json(*a)
+    def to_json(*a)
+      read.to_json(*a)
+    end
 
     # @param a [Object]
     #
     # @return [String]
-    def to_yaml(*a) = read.to_yaml(*a)
+    def to_yaml(*a)
+      read.to_yaml(*a)
+    end
 
     # @param content [Pathname, StringIO, IO, String]
     # @param filename [Pathname, String, nil]
