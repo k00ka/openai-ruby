@@ -7,7 +7,9 @@ module OpenAI
       # @api private
       #
       # @return [Float]
-      def self.monotonic_secs = Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      def self.monotonic_secs
+        Process.clock_gettime(Process::CLOCK_MONOTONIC)
+      end
 
       # @api private
       #
@@ -390,7 +392,9 @@ module OpenAI
         # @api private
         #
         # @return [Boolean, nil]
-        def close? = @closing
+        def close?
+          @closing
+        end
 
         # @api private
         def close
