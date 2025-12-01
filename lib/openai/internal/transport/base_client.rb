@@ -218,17 +218,23 @@ module OpenAI
         # @api private
         #
         # @return [Hash{String=>String}]
-        private def auth_headers = {}
+        private def auth_headers
+          {}
+        end
 
         # @api private
         #
         # @return [String]
-        private def user_agent = "#{self.class.name}/Ruby #{OpenAI::VERSION}"
+        private def user_agent
+          "#{self.class.name}/Ruby #{OpenAI::VERSION}"
+        end
 
         # @api private
         #
         # @return [String]
-        private def generate_idempotency_key = "stainless-ruby-retry-#{SecureRandom.uuid}"
+        private def generate_idempotency_key
+          "stainless-ruby-retry-#{SecureRandom.uuid}"
+        end
 
         # @api private
         #
