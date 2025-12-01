@@ -14,13 +14,17 @@ module OpenAI
         # @api public
         #
         # @return [Boolean]
-        def next_page? = (raise NotImplementedError)
+        def next_page?
+          raise NotImplementedError
+        end
 
         # @api public
         #
         # @raise [OpenAI::Errors::APIError]
         # @return [self]
-        def next_page = (raise NotImplementedError)
+        def next_page
+          raise NotImplementedError
+        end
 
         # @api public
         #
@@ -28,10 +32,14 @@ module OpenAI
         #
         # @yieldparam [generic<Elem>]
         # @return [void]
-        def auto_paging_each(&blk) = (raise NotImplementedError)
+        def auto_paging_each(&blk)
+          raise NotImplementedError
+        end
 
         # @return [Enumerable<generic<Elem>>]
-        def to_enum = super(:auto_paging_each)
+        def to_enum
+          super(:auto_paging_each)
+        end
 
         alias_method :enum_for, :to_enum
 
