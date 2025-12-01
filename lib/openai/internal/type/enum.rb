@@ -47,14 +47,18 @@ module OpenAI
         # All of the valid Symbol values for this enum.
         #
         # @return [Array<NilClass, Boolean, Integer, Float, Symbol>]
-        def values = constants.map { const_get(_1) }
+        def values
+          constants.map { const_get(_1) }
+        end
 
         # @api public
         #
         # @param other [Object]
         #
         # @return [Boolean]
-        def ===(other) = values.include?(other)
+        def ===(other)
+          values.include?(other)
+        end
 
         # @api public
         #
@@ -70,7 +74,9 @@ module OpenAI
         # @api public
         #
         # @return [Integer]
-        def hash = values.to_set.hash
+        def hash
+          values.to_set.hash
+        end
 
         # @api private
         #
