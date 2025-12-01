@@ -835,7 +835,9 @@ module OpenAI
         # @api private
         #
         # @return [Hash{Symbol=>Object}]
-        private def sorbet_runtime_constants = @sorbet_runtime_constants ||= {}
+        private def sorbet_runtime_constants
+          @sorbet_runtime_constants ||= {}
+        end
 
         # @api private
         #
@@ -856,18 +858,24 @@ module OpenAI
         # @param name [Symbol]
         #
         # @return [Boolean]
-        def sorbet_constant_defined?(name) = sorbet_runtime_constants.key?(name)
+        def sorbet_constant_defined?(name)
+          sorbet_runtime_constants.key?(name)
+        end
 
         # @api private
         #
         # @param name [Symbol]
         # @param blk [Proc]
-        def define_sorbet_constant!(name, &blk) = sorbet_runtime_constants.store(name, blk)
+        def define_sorbet_constant!(name, &blk)
+          sorbet_runtime_constants.store(name, blk)
+        end
 
         # @api private
         #
         # @return [Object]
-        def to_sorbet_type = raise NotImplementedError
+        def to_sorbet_type
+          raise NotImplementedError
+        end
 
         class << self
           # @api private
