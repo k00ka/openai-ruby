@@ -23,7 +23,9 @@ module OpenAI
           # @api private
           #
           # @return [Hash{Symbol=>Hash{Symbol=>Object}}]
-          def known_fields = @known_fields ||= {}
+          def known_fields
+            @known_fields ||= {}
+          end
 
           # @api private
           #
@@ -211,7 +213,9 @@ module OpenAI
           # @api public
           #
           # @return [Integer]
-          def hash = fields.hash
+          def hash
+            fields.hash
+          end
         end
 
         # @api public
@@ -219,12 +223,16 @@ module OpenAI
         # @param other [Object]
         #
         # @return [Boolean]
-        def ==(other) = self.class == other.class && @data == other.to_h
+        def ==(other)
+          self.class == other.class && @data == other.to_h
+        end
 
         # @api public
         #
         # @return [Integer]
-        def hash = [self.class, @data].hash
+        def hash
+          [self.class, @data].hash
+        end
 
         class << self
           # @api private
@@ -421,7 +429,9 @@ module OpenAI
         # should not be mutated.
         #
         # @return [Hash{Symbol=>Object}]
-        def to_h = @data
+        def to_h
+          @data
+        end
 
         alias_method :to_hash, :to_h
 
@@ -431,7 +441,9 @@ module OpenAI
         # `#to_h` on nested models.
         #
         # @return [Hash{Symbol=>Object}]
-        def deep_to_h = self.class.recursively_to_h(@data, convert: false)
+        def deep_to_h
+          self.class.recursively_to_h(@data, convert: false)
+        end
 
         # @param keys [Array<Symbol>, nil]
         #
@@ -461,14 +473,18 @@ module OpenAI
         # @param a [Object]
         #
         # @return [String]
-        def to_json(*a) = OpenAI::Internal::Type::Converter.dump(self.class, self).to_json(*a)
+        def to_json(*a)
+          OpenAI::Internal::Type::Converter.dump(self.class, self).to_json(*a)
+        end
 
         # @api public
         #
         # @param a [Object]
         #
         # @return [String]
-        def to_yaml(*a) = OpenAI::Internal::Type::Converter.dump(self.class, self).to_yaml(*a)
+        def to_yaml(*a)
+          OpenAI::Internal::Type::Converter.dump(self.class, self).to_yaml(*a)
+        end
 
         # Create a new instance of a model.
         #
@@ -512,7 +528,9 @@ module OpenAI
         # @api public
         #
         # @return [String]
-        def to_s = deep_to_h.to_s
+        def to_s
+          deep_to_h.to_s
+        end
 
         # @api private
         #
