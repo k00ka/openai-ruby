@@ -19,14 +19,18 @@ module OpenAI
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.===(other) = other == true || other == false
+        def self.===(other)
+          other == true || other == false
+        end
 
         # @api public
         #
         # @param other [Object]
         #
         # @return [Boolean]
-        def self.==(other) = other.is_a?(Class) && other <= OpenAI::Internal::Type::Boolean
+        def self.==(other)
+          other.is_a?(Class) && other <= OpenAI::Internal::Type::Boolean
+        end
 
         class << self
           # @api private
