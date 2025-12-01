@@ -29,7 +29,9 @@ module OpenAI
         #   @option state [Array<String>] :path
         #
         # @return [Hash{Symbol=>Object}]
-        def to_json_schema_inner(state:) = (raise NotImplementedError)
+        def to_json_schema_inner(state:)
+          raise NotImplementedError
+        end
 
         # rubocop:enable Lint/UnusedMethodArgument
 
